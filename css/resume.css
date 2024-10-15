@@ -146,4 +146,41 @@ a {
   }
 }
     
+.publication {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.publication p {
+  margin: 0;
+  text-align: justify;
+}
+
+.publication strong {
+  font-weight: normal;
+  text-transform: capitalize; /* Capitalize author names */
+}
+
+.publication em {
+  font-style: italic; /* Italicize the journal or booktitle */
+}
+
+.publication a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+.publication a:hover {
+  text-decoration: underline; /* Underline the link on hover */
+}
+
+.publication::before {
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #ddd;
+  margin-bottom: 10px;
+}
 
