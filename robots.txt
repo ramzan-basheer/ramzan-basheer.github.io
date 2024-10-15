@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://ramzan-basheer.github.io/sitemap.xml
