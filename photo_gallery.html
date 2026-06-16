@@ -1,205 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery — Ramzan Basheer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#111418;
+  --bg2:#181d24;
+  --bg3:#1f2530;
+  --border:rgba(255,255,255,0.07);
+  --border2:rgba(255,255,255,0.12);
+  --text:#d4dbe6;
+  --muted:#6e7d92;
+  --faint:#303c4a;
+  --amber:#f59e0b;
+  --amber-dim:rgba(245,158,11,0.08);
+  --amber-border:rgba(245,158,11,0.22);
+  --white:#f0f4f8;
+  --display:'Instrument Serif',Georgia,serif;
+  --sans:'Syne',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:15px;line-height:1.6}
 
-  <head>
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:54px;display:flex;align-items:center;justify-content:space-between;
+  padding:0 4rem;
+  border-bottom:1px solid var(--border);
+  background:rgba(17,20,24,0.92);
+  backdrop-filter:blur(20px);
+}
+.nav-name{
+  font-family:var(--display);font-size:1.05rem;
+  font-style:italic;color:var(--white);text-decoration:none;
+}
+.nav-links{display:flex;gap:0.15rem}
+.nav-links a{
+  font-size:0.74rem;font-weight:500;color:var(--muted);
+  text-decoration:none;padding:0.3rem 0.65rem;border-radius:5px;
+  letter-spacing:0.04em;text-transform:uppercase;
+  transition:color 0.12s,background 0.12s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--bg3)}
+.nav-back{
+  display:flex;align-items:center;gap:0.4rem;
+  font-size:0.72rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.05em;padding:0.32rem 0.85rem;border-radius:5px;
+  border:1px solid var(--border2);color:var(--muted);
+  text-decoration:none;transition:color 0.12s,border-color 0.12s;
+}
+.nav-back:hover{color:var(--amber);border-color:var(--amber-border)}
+.nav-back svg{width:13px;height:13px}
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+/* ── HERO ── */
+.gallery-hero{
+  padding:7rem 4rem 4rem;
+  border-bottom:1px solid var(--border);
+  max-width:1200px;margin:0 auto;
+}
+.hero-sup{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-size:0.68rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.14em;color:var(--amber);margin-bottom:1.4rem;
+}
+.hero-sup-dot{width:6px;height:6px;border-radius:50%;background:var(--amber)}
+h1{
+  font-family:var(--display);font-size:3.5rem;
+  font-weight:400;font-style:italic;
+  color:var(--white);line-height:1;letter-spacing:-0.02em;
+  margin-bottom:1rem;
+}
+h1 em{font-style:normal;color:var(--amber)}
+.hero-sub{
+  font-size:0.88rem;color:var(--muted);
+  max-width:500px;line-height:1.7;
+}
 
-    <title>Ramzan Basheer</title>
+/* ── TABS ── */
+.tab-bar{
+  max-width:1200px;margin:0 auto;
+  padding:0 4rem;
+  display:flex;gap:0.15rem;
+  border-bottom:1px solid var(--border);
+  position:sticky;top:54px;z-index:50;
+  background:rgba(17,20,24,0.96);
+  backdrop-filter:blur(12px);
+}
+.tab-btn{
+  font-size:0.74rem;font-weight:600;text-transform:uppercase;
+  letter-spacing:0.06em;padding:0.9rem 1rem;
+  color:var(--muted);background:none;border:none;
+  border-bottom:2px solid transparent;cursor:pointer;
+  transition:color 0.12s,border-color 0.12s;
+  font-family:var(--sans);
+}
+.tab-btn:hover{color:var(--text)}
+.tab-btn.active{color:var(--amber);border-bottom-color:var(--amber)}
 
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+/* ── SECTIONS ── */
+.outer{max-width:1200px;margin:0 auto;padding:0 4rem}
+.gallery-sec{
+  padding:4rem 0;border-bottom:1px solid var(--border);
+}
+.sec-label{
+  font-size:0.64rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.16em;color:var(--amber);margin-bottom:0.5rem;
+}
+h2{
+  font-family:var(--display);font-size:2rem;
+  font-weight:400;font-style:italic;
+  color:var(--white);margin-bottom:0.5rem;
+}
+.sec-desc{font-size:0.84rem;color:var(--muted);margin-bottom:2rem;line-height:1.6}
 
-    <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" /> 
-    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+/* ── MY PLACES — map + chips ── */
+.places-wrap{
+  display:grid;grid-template-columns:1fr 280px;gap:2rem;align-items:start;
+}
+.map-frame{
+  border-radius:8px;overflow:hidden;
+  border:1px solid var(--border2);
+  aspect-ratio:4/3;
+}
+.map-frame iframe{width:100%;height:100%;display:block;border:none;filter:grayscale(0.2)}
+.places-sidebar{}
+.place-tag-group{margin-bottom:1.5rem}
+.place-tag-group h3{
+  font-size:0.64rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.12em;color:var(--faint);
+  margin-bottom:0.6rem;padding-bottom:0.4rem;
+  border-bottom:1px solid var(--border);
+}
+.ptag{
+  display:inline-flex;align-items:center;gap:0.3rem;
+  margin:0.2rem 0.2rem 0 0;padding:0.25rem 0.6rem;
+  border-radius:4px;background:var(--bg3);
+  border:1px solid var(--border);
+  font-size:0.7rem;color:var(--muted);font-weight:500;
+}
+.ptag svg{width:10px;height:10px;opacity:0.5}
 
-    <!-- Custom styles for this template -->
-    <link href="css/resume.min.css" rel="stylesheet">
+/* ── PEOPLE GRID ── */
+.people-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1px;background:var(--border);border:1px solid var(--border);
+}
+.person-card{
+  background:var(--bg2);position:relative;
+  overflow:hidden;aspect-ratio:4/3;
+}
+.person-card img{
+  width:100%;height:100%;object-fit:cover;
+  display:block;transition:transform 0.4s ease;
+  filter:grayscale(0.1);
+}
+.person-card:hover img{transform:scale(1.04)}
+.person-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:2rem 1.25rem 1.25rem;
+  background:linear-gradient(transparent,rgba(17,20,24,0.92));
+  opacity:0;transition:opacity 0.25s;
+}
+.person-card:hover .person-overlay{opacity:1}
+.person-name{
+  font-size:0.88rem;font-weight:600;color:var(--white);margin-bottom:0.1rem;
+}
+.person-rel{font-size:0.72rem;color:var(--amber)}
 
-    <!--favicon-->
-    <link rel="icon" type="image/png" sizes="48x48" href="img/ramzan_48.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/ramzan_32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/ramzan_16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/ramzan_180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="img/ramzan_192.png">
+/* ── PHOTO MASONRY ── */
+.photo-grid{
+  columns:3;column-gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+}
+.photo-item{
+  break-inside:avoid;display:block;
+  background:var(--bg2);
+  overflow:hidden;position:relative;
+  cursor:pointer;
+  border-bottom:1px solid var(--border);
+}
+.photo-item img{
+  width:100%;display:block;
+  transition:transform 0.45s ease,filter 0.3s ease;
+  filter:grayscale(0.08);
+}
+.photo-item:hover img{transform:scale(1.03);filter:grayscale(0)}
+.photo-item .overlay{
+  position:absolute;inset:0;
+  background:rgba(17,20,24,0);
+  transition:background 0.3s;
+  display:flex;align-items:flex-end;padding:1rem;
+}
+.photo-item:hover .overlay{background:rgba(17,20,24,0.25)}
 
-    <!--sitemap-->
-    <link rel="sitemap" type="application/xml" href="sitemap.xml" />
+/* ── LIGHTBOX ── */
+#lightbox{
+  display:none;position:fixed;inset:0;z-index:999;
+  background:rgba(11,13,17,0.96);
+  align-items:center;justify-content:center;
+  flex-direction:column;gap:1rem;
+}
+#lightbox.open{display:flex}
+#lightbox img{
+  max-width:90vw;max-height:85vh;
+  object-fit:contain;border-radius:4px;
+  border:1px solid var(--border2);
+}
+#lightbox-close{
+  position:fixed;top:1.5rem;right:2rem;
+  background:none;border:none;color:var(--muted);
+  font-size:1.5rem;cursor:pointer;font-family:var(--sans);
+  transition:color 0.12s;
+}
+#lightbox-close:hover{color:var(--amber)}
+#lightbox-nav{display:flex;gap:1rem;align-items:center}
+#lightbox-nav button{
+  background:var(--bg3);border:1px solid var(--border2);
+  color:var(--muted);padding:0.4rem 1rem;border-radius:4px;
+  cursor:pointer;font-size:1rem;font-family:var(--sans);
+  transition:color 0.12s,border-color 0.12s;
+}
+#lightbox-nav button:hover{color:var(--amber);border-color:var(--amber-border)}
+#lightbox-counter{font-size:0.72rem;color:var(--faint);letter-spacing:0.06em}
 
-    <!--google index-->
-    <meta name="google-site-verification" content="IVmGwHN91-FfHqmmUR_VDwk_hjSJb664gUHg-9Yo7Y0" />
+/* ── FOOTER ── */
+footer{
+  border-top:1px solid var(--border);
+  padding:1.5rem 4rem;font-size:0.71rem;color:var(--faint);
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:0.5rem;
+}
+footer a{color:var(--faint);text-decoration:none;transition:color 0.12s}
+footer a:hover{color:var(--amber)}
 
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  nav{padding:0 1.5rem}
+  .nav-links{display:none}
+  .gallery-hero,.outer{padding-left:1.5rem;padding-right:1.5rem}
+  .tab-bar{padding:0 1.5rem;overflow-x:auto}
+  h1{font-size:2.4rem}
+  .places-wrap{grid-template-columns:1fr}
+  .photo-grid{columns:2}
+  footer{padding:1.25rem 1.5rem}
+}
+@media(max-width:540px){
+  .photo-grid{columns:1}
+  .people-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
 
-  </head>
+<nav>
+  <a href="index.html" class="nav-name">Ramzan Basheer</a>
+  <div class="nav-links">
+    <a href="#places" class="active">Places</a>
+    <a href="#people">People</a>
+    <a href="#clicks">Photography</a>
+  </div>
+  <a href="index.html" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+    Back
+  </a>
+</nav>
 
-  <body id="page-top">
+<!-- HERO -->
+<div class="gallery-hero">
+  <div class="hero-sup"><span class="hero-sup-dot"></span> Beyond the Lab</div>
+  <h1>Extras &amp; <em>Gallery</em></h1>
+  <p class="hero-sub">Places visited, people who matter, and photographs from my camera. Life beyond research.</p>
+</div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="index.html">
-        <span class="d-block d-lg-none">
-          <img src="img/ramzan.jpg" alt="Icon" style="height: 30px; width: 25px; border-radius: 50%; vertical-align: middle; margin-right: 5px;"> Ramzan Basheer
-        </span>
-        
-        <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/ramzan.jpg" alt="">
-        </span>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#heat_map">My Places</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#people">My People</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#gallery">My Clicks</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+<!-- TAB BAR -->
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="scrollTo('places')">🌍 My Places</button>
+  <button class="tab-btn" onclick="scrollTo('people')">👥 My People</button>
+  <button class="tab-btn" onclick="scrollTo('clicks')">📷 My Clicks</button>
+</div>
 
-    <div class="container-fluid p-0">
+<div class="outer">
 
-      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="heat_map">
-        <div class="my-auto">
-          <h2 class="mb-5">My Global Heat Map</h2>·
-            <iframe src="https://www.google.com/maps/d/embed?mid=1cgG3K2XvVHumTgnz9yz7b8A4uf3GkP4&ehbc=2E312F" width="640" height="480"></iframe>
-          </div>
-        </div>
-      </section>
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="people" style="background-color: #eceff1;">
-        <div class="my-auto">
-          <h2 class="mb-5">My People</h2>
-          <div class="photo-gallery">
-            <img src="img/mypeople/Hadi_Lulu.jpg" alt="Photo 1" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/mypeople/naughtyHadi.jpg" alt="P2" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/mypeople/vrlab1.jpg" alt="P3" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/mypeople/vrlab2.jpg" alt="P4" style="width: 30%; margin: 10px;" loading="lazy">
-          </div>
-        </div>
-      </section>
-            
-
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="gallery">
-        <div class="my-auto">
-          <h2 class="mb-5">My Clicks</h2>
-          <p class="mb-5">Photography is one of my hobbies. Here are a few shots I’ve clicked.</p>
-
-          <div class="photo-gallery">
-            <img src="img/myclicks/DSC0200.jpg" alt="Photo 1" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/WP_20140521_16_41_04_Pro.jpg" alt="Photo 2" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/WP_20140527_18_04_12_Pro.jpg" alt="Photo 3" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0343.jpg" alt="Photo 4" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0138.jpg" alt="Photo 5" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC01142.jpg" alt="Photo 6" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC01725.jpg" alt="P7" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0445-Pano.jpg" alt="P8" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC02157.jpg" alt="P9" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC02211.jpg" alt="P10" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC02867.jpg" alt="P11" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC03634.jpg" alt="P12" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0803.jpg" alt="P14" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0004.jpg" alt="P13" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_1105.jpg" alt="P15" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0027-2.jpg" alt="P16" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0041-2_HDR.jpg" alt="P17" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0052.jpg" alt="P18" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0067_HDR.jpg" alt="P19" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0059-2.jpg" alt="P20" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_1199.jpg" alt="P21" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0090.jpg" alt="P22" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0096.jpg" alt="P23" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0099.jpg" alt="P24" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_1091-2.jpg" alt="P25" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0763.jpg" alt="P26" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0110.jpg" alt="P27" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0247.jpg" alt="P28" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0137.jpg" alt="P29" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0140.jpg" alt="P30" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0585.jpg" alt="P31" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0554.jpg" alt="P32" style="width: 30%; margin: 10px;" loading="lazy">
-            <img src="img/myclicks/DSC_0341.jpg" alt="P33" style="width: 30%; margin: 10px;" loading="lazy">
-          </div>
-        </div>
-      </section>
+<!-- ── MY PLACES ── -->
+<section class="gallery-sec" id="places">
+  <div class="sec-label">Travels & Locations</div>
+  <h2>My Places</h2>
+  <p class="sec-desc">A heat map of places I've lived in, worked at, and explored. IIT Bombay, NIT Calicut, IIST Trivandrum — and everywhere in between.</p>
+  <div class="places-wrap">
+    <div class="map-frame">
+      <iframe src="https://www.google.com/maps/d/embed?mid=1cgG3K2XvVHumTgnz9yz7b8A4uf3GkP4&ehbc=2E312F" allowfullscreen loading="lazy"></iframe>
     </div>
-
-    <footer class="bg-dark text-white text-center py-3">
-      <div class="container">
-          <p class="mb-0">© 2024 Ramzan Basheer. All Rights Reserved.</p>
-          <p>Follow me on:</p>
-          <ul class="list-inline list-social-icons mb-0">
-              <li class="list-inline-item">
-                  <a href="https://www.linkedin.com/in/r4ramzan-basheer" target="_blank">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-              <li class="list-inline-item">
-                  <a href="https://github.com/ramzan-basheer" target="_blank">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-              <li class="list-inline-item">
-                  <a href="https://x.com/r4ramzan" target="_blank">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-              <li class="list-inline-item">
-                  <a href="https://www.instagram.com/r4ramzan" target="_blank">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-              <li class="list-inline-item">
-                  <a href="https://www.facebook.com/ramzanb" target="_blank">
-                      <span class="fa-stack fa-lg">
-                          <i class="fa fa-circle fa-stack-2x"></i>
-                          <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                      </span>
-                  </a>
-              </li>
-          </ul>
+    <div class="places-sidebar">
+      <div class="place-tag-group">
+        <h3>Institutions</h3>
+        <span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/></svg>IIST Thiruvananthapuram</span>
+        <span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/></svg>IIT Bombay</span>
+        <span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/></svg>NIT Calicut</span>
+        <span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/></svg>Presidency University</span>
       </div>
-    </footer>
-  
+      <div class="place-tag-group">
+        <h3>Industry</h3>
+        <span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/></svg>Oracle</span>
+        <span class="ptag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/></svg>Infosys</span>
+      </div>
+      <div class="place-tag-group">
+        <h3>States Visited</h3>
+        <span class="ptag">Kerala</span>
+        <span class="ptag">Maharashtra</span>
+        <span class="ptag">Karnataka</span>
+        <span class="ptag">Tamil Nadu</span>
+        <span class="ptag">Delhi</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- ── MY PEOPLE ── -->
+<section class="gallery-sec" id="people">
+  <div class="sec-label">People & Lab</div>
+  <h2>My People</h2>
+  <p class="sec-desc">Lab colleagues, family, and friends who make the journey worthwhile.</p>
+  <div class="people-grid">
+    <div class="person-card">
+      <img src="img/mypeople/Hadi_Lulu.jpg" alt="Lab photo" loading="lazy">
+      <div class="person-overlay">
+        <div class="person-name">Lab Moments</div>
+        <div class="person-rel">IIST VR Lab</div>
+      </div>
+    </div>
+    <div class="person-card">
+      <img src="img/mypeople/naughtyHadi.jpg" alt="Lab photo" loading="lazy">
+      <div class="person-overlay">
+        <div class="person-name">Lab Life</div>
+        <div class="person-rel">IIST Thiruvananthapuram</div>
+      </div>
+    </div>
+    <div class="person-card">
+      <img src="img/mypeople/vrlab1.jpg" alt="VR Lab" loading="lazy">
+      <div class="person-overlay">
+        <div class="person-name">VR Lab</div>
+        <div class="person-rel">Research Setup</div>
+      </div>
+    </div>
+    <div class="person-card">
+      <img src="img/mypeople/vrlab2.jpg" alt="VR Lab" loading="lazy">
+      <div class="person-overlay">
+        <div class="person-name">VR Lab</div>
+        <div class="person-rel">IIST Avionics Dept.</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- ── MY CLICKS ── -->
+<section class="gallery-sec" id="clicks">
+  <div class="sec-label">Photography</div>
+  <h2>My Clicks</h2>
+  <p class="sec-desc">Photography is one of my hobbies. Click any image to view it full screen.</p>
 
-    <!-- Custom scripts for this template -->
-    <script src="js/resume.min.js"></script>
+  <div class="photo-grid" id="photoGrid">
+    <div class="photo-item" onclick="openLightbox(0)">
+      <img src="img/myclicks/DSC0200.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(1)">
+      <img src="img/myclicks/WP_20140521_16_41_04_Pro.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(2)">
+      <img src="img/myclicks/WP_20140527_18_04_12_Pro.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(3)">
+      <img src="img/myclicks/DSC_0343.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(4)">
+      <img src="img/myclicks/DSC_0138.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(5)">
+      <img src="img/myclicks/DSC01142.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(6)">
+      <img src="img/myclicks/DSC01725.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(7)">
+      <img src="img/myclicks/DSC_0445-Pano.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(8)">
+      <img src="img/myclicks/DSC02157.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(9)">
+      <img src="img/myclicks/DSC02211.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(10)">
+      <img src="img/myclicks/DSC02867.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(11)">
+      <img src="img/myclicks/DSC03634.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(12)">
+      <img src="img/myclicks/DSC_0803.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(13)">
+      <img src="img/myclicks/DSC_0004.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(14)">
+      <img src="img/myclicks/DSC_1105.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(15)">
+      <img src="img/myclicks/DSC_0027-2.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(16)">
+      <img src="img/myclicks/DSC_0041-2_HDR.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(17)">
+      <img src="img/myclicks/DSC_0052.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(18)">
+      <img src="img/myclicks/DSC_0067_HDR.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(19)">
+      <img src="img/myclicks/DSC_0059-2.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(20)">
+      <img src="img/myclicks/DSC_1199.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(21)">
+      <img src="img/myclicks/DSC_0090.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(22)">
+      <img src="img/myclicks/DSC_0096.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(23)">
+      <img src="img/myclicks/DSC_0099.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(24)">
+      <img src="img/myclicks/DSC_1091-2.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(25)">
+      <img src="img/myclicks/DSC_0763.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(26)">
+      <img src="img/myclicks/DSC_0110.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(27)">
+      <img src="img/myclicks/DSC_0247.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(28)">
+      <img src="img/myclicks/DSC_0137.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(29)">
+      <img src="img/myclicks/DSC_0140.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(30)">
+      <img src="img/myclicks/DSC_0585.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(31)">
+      <img src="img/myclicks/DSC_0554.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+    <div class="photo-item" onclick="openLightbox(32)">
+      <img src="img/myclicks/DSC_0341.jpg" alt="Photo" loading="lazy">
+      <div class="overlay"></div>
+    </div>
+  </div>
+</section>
 
-  </body>
+</div>
 
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox(event)">
+  <button id="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-nav">
+    <button onclick="event.stopPropagation();prevPhoto()">← Prev</button>
+    <span id="lightbox-counter">1 / 33</span>
+    <button onclick="event.stopPropagation();nextPhoto()">Next →</button>
+  </div>
+</div>
+
+<footer>
+  <span>© 2026 Ramzan Basheer · IIST Thiruvananthapuram</span>
+  <a href="index.html">← Back to Portfolio</a>
+</footer>
+
+<script>
+// tab nav smooth scroll
+function scrollTo(id){
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  event.target.classList.add('active');
+}
+
+// tab highlight on scroll
+const tabs = document.querySelectorAll('.tab-btn');
+const secs = document.querySelectorAll('.gallery-sec');
+const navAs = document.querySelectorAll('.nav-links a');
+const secObs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const id = e.target.id;
+      navAs.forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+id));
+    }
+  });
+},{rootMargin:'-30% 0px -60% 0px'});
+secs.forEach(s=>secObs.observe(s));
+
+// lightbox
+const photos = Array.from(document.querySelectorAll('.photo-item img')).map(i=>i.src);
+let current = 0;
+
+function openLightbox(idx){
+  current = idx;
+  document.getElementById('lightbox-img').src = photos[idx];
+  document.getElementById('lightbox-counter').textContent = (idx+1)+' / '+photos.length;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(e){
+  if(!e || e.target===document.getElementById('lightbox') || e.target===document.getElementById('lightbox-close')){
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow='';
+  }
+}
+function nextPhoto(){
+  current=(current+1)%photos.length;
+  openLightbox(current);
+}
+function prevPhoto(){
+  current=(current-1+photos.length)%photos.length;
+  openLightbox(current);
+}
+document.addEventListener('keydown',e=>{
+  const lb=document.getElementById('lightbox');
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='ArrowRight')nextPhoto();
+  if(e.key==='ArrowLeft')prevPhoto();
+  if(e.key==='Escape')closeLightbox({target:lb});
+});
+</script>
+</body>
 </html>
