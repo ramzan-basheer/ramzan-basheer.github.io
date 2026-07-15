@@ -283,6 +283,13 @@ h2{
 .cc-name svg{width:15px;height:15px;color:var(--amber);opacity:0.8}
 .cc-lang{font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--faint)}
 .cc p{font-size:0.78rem;color:var(--muted);line-height:1.55}
+.cc-pending{
+  display:inline-block;margin-top:0.6rem;
+  font-size:0.62rem;font-weight:700;text-transform:uppercase;
+  letter-spacing:0.06em;padding:0.15rem 0.45rem;border-radius:3px;
+  background:rgba(255,255,255,0.04);color:var(--faint);
+  border:1px solid var(--border2);
+}
 
 /* ── SKILLS ── */
 .sk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem}
@@ -432,7 +439,7 @@ footer a:hover{color:var(--amber)}
     </div>
     <div class="stat-strip">
       <div class="stat-cell">
-        <div class="stat-num">6</div>
+        <div class="stat-num">5</div>
         <div class="stat-label">Publications</div>
       </div>
       <div class="stat-cell">
@@ -594,6 +601,10 @@ footer a:hover{color:var(--amber)}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
               DOI
             </a>
+            <a href="https://arxiv.org/abs/2409.07327" target="_blank" class="pub-link pre">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              Preprint
+            </a>
           </div>
         </div>
       </div>
@@ -608,21 +619,6 @@ footer a:hover{color:var(--amber)}
             <a href="https://doi.org/10.1109/MLSP58920.2024.10734832" target="_blank" class="pub-link doi">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
               DOI
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-year">2024</div>
-        <div>
-          <div class="pub-venue">arXiv Preprint · 2409.07327</div>
-          <div class="pub-title">Current Symmetry Group Equivariant Convolution Frameworks for Representation Learning</div>
-          <div class="pub-authors"><strong>Basheer, R.</strong> &amp; Mishra, D.</div>
-          <div class="pub-links">
-            <a href="https://arxiv.org/abs/2409.07327" target="_blank" class="pub-link pre">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              arXiv
             </a>
           </div>
         </div>
@@ -670,7 +666,7 @@ footer a:hover{color:var(--amber)}
         </div>
       </div>
       <div class="tli">
-        <div class="tli-date">Aug 2020 – Jul 2022</div>
+        <div class="tli-date">Aug 2022 – Jul 2024</div>
         <div>
           <div class="tli-role">Junior Research Fellow</div>
           <div class="tli-org">
@@ -688,7 +684,7 @@ footer a:hover{color:var(--amber)}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7H3l2-4h14l2 4"/></svg>
             Presidency University
           </div>
-          <div class="tli-desc">Teaching signal processing and machine learning while pursuing doctoral research at IIST.</div>
+          <div class="tli-desc">On sabbatical since 2022 to pursue full-time doctoral research at IIST. Previously taught signal processing and electronics engineering courses.</div>
         </div>
       </div>
       <div class="tli">
@@ -754,7 +750,7 @@ footer a:hover{color:var(--amber)}
     <div class="sec-label">Open Source</div>
     <h2>Code</h2>
     <div class="code-grid">
-      <a href="https://github.com/ramzan-basheer" target="_blank" class="cc">
+      <a href="https://github.com/ramzan-basheer/Hypercube-S4GNN" target="_blank" class="cc">
         <div class="cc-header">
           <span class="cc-name">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
@@ -762,7 +758,7 @@ footer a:hover{color:var(--amber)}
           </span>
           <span class="cc-lang">Python · PyTorch</span>
         </div>
-        <p>Multi-edge GNN with S4/Mamba SSMs for multivariate EEG seizure detection. Evaluated on TUSZ v1.5.2.</p>
+        <p>Multi-edge GNN with S4/Mamba SSMs for multivariate EEG seizure detection. Evaluated on TUSZ v1.5.2. Code for the IEEE MLSP 2024 paper.</p>
       </a>
       <a href="https://github.com/ramzan-basheer" target="_blank" class="cc">
         <div class="cc-header">
@@ -772,7 +768,8 @@ footer a:hover{color:var(--amber)}
           </span>
           <span class="cc-lang">Python · PyTorch</span>
         </div>
-        <p>Distributional and geometric inductive biases via hypergraph topology and SSM temporal modelling.</p>
+        <p>Distributional and geometric inductive biases via hypergraph topology and SSM temporal modelling. Code for the IEEE Access 2026 paper.</p>
+        <span class="cc-pending">Repo release pending</span>
       </a>
       <a href="https://github.com/ramzan-basheer" target="_blank" class="cc">
         <div class="cc-header">
@@ -782,7 +779,8 @@ footer a:hover{color:var(--amber)}
           </span>
           <span class="cc-lang">Python · PyTorch</span>
         </div>
-        <p>Log-Euclidean SPD manifold GNN for seizure prediction on CHB-MIT and Siena Scalp EEG datasets.</p>
+        <p>Log-Euclidean SPD manifold GNN for seizure prediction on CHB-MIT and Siena Scalp EEG datasets. Manuscript in preparation for IEEE TNSRE.</p>
+        <span class="cc-pending">Repo release pending</span>
       </a>
     </div>
     <p style="margin-top:1rem;font-size:0.74rem;color:var(--faint)">
