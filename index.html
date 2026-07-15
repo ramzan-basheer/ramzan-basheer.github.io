@@ -38,7 +38,8 @@ nav{
   background:rgba(17,20,24,0.92);
   backdrop-filter:blur(20px);
 }
-.nav-name{font-family:var(--display);font-size:1.05rem;font-style:italic;color:var(--white)}
+.nav-name{font-family:var(--display);font-size:1.05rem;font-style:italic;color:var(--white);text-decoration:none;cursor:pointer}
+.nav-name:hover{color:var(--amber)}
 .nav-links{display:flex;gap:0.15rem}
 .nav-links a{
   font-size:0.74rem;font-weight:500;color:var(--muted);
@@ -361,7 +362,7 @@ footer a:hover{color:var(--amber)}
 <body>
 
 <nav>
-  <span class="nav-name">Ramzan Basheer</span>
+  <a href="#about" class="nav-name">Ramzan Basheer</a>
   <div class="nav-links">
     <a href="#news">News</a>
     <a href="#research">Research</a>
