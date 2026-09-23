@@ -4,6 +4,56 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ramzan Basheer — Machine Learning Researcher</title>
+<meta name="description" content="Ramzan Basheer is a machine learning researcher working on geometric and structured deep learning: graph and hypergraph neural networks, state-space models, equivariant representations and SPD-matrix methods, with multichannel EEG as the main application domain. PhD candidate at IIST, expected December 2026.">
+<meta name="author" content="Ramzan Basheer">
+<link rel="canonical" href="https://ramzan-basheer.github.io/">
+
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Ramzan Basheer — Machine Learning Researcher">
+<meta property="og:description" content="Geometric and structured deep learning: graph and hypergraph neural networks, state-space models, equivariant representations and SPD-matrix methods for multivariate data.">
+<meta property="og:url" content="https://ramzan-basheer.github.io/">
+<meta property="og:site_name" content="Ramzan Basheer">
+<meta property="profile:first_name" content="Ramzan">
+<meta property="profile:last_name" content="Basheer">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ramzan Basheer",
+  "url": "https://ramzan-basheer.github.io/",
+  "email": "mailto:r4ramzan@gmail.com",
+  "jobTitle": "Senior Research Fellow",
+  "description": "Machine learning researcher working on geometric and structured deep learning for multivariate data, with multichannel EEG as the main application domain.",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "Indian Institute of Space Science and Technology (IIST)",
+    "address": {"@type": "PostalAddress", "addressLocality": "Thiruvananthapuram", "addressCountry": "IN"}
+  },
+  "alumniOf": [
+    {"@type": "CollegeOrUniversity", "name": "Indian Institute of Technology Bombay"},
+    {"@type": "CollegeOrUniversity", "name": "National Institute of Technology Calicut"}
+  ],
+  "knowsAbout": [
+    "Representation learning",
+    "Geometric deep learning",
+    "Graph neural networks",
+    "Hypergraph learning",
+    "State-space models",
+    "Equivariant neural networks",
+    "Riemannian and manifold learning",
+    "Continual learning",
+    "EEG signal analysis"
+  ],
+  "sameAs": [
+    "https://scholar.google.com/citations?hl=en&user=qPyFnlAAAAAJ",
+    "https://github.com/ramzan-basheer",
+    "https://orcid.org/0000-0001-5856-5141",
+    "https://www.linkedin.com/in/r4ramzan-basheer"
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,8 +66,8 @@
   --border:rgba(255,255,255,0.07);
   --border2:rgba(255,255,255,0.12);
   --text:#d4dbe6;
-  --muted:#6e7d92;
-  --faint:#303c4a;
+  --muted:#8d9aad;
+  --faint:#76849a;
   --amber:#f59e0b;
   --amber-dim:rgba(245,158,11,0.08);
   --amber-border:rgba(245,158,11,0.22);
@@ -25,18 +75,21 @@
   --display:'Instrument Serif',Georgia,serif;
   --sans:'Syne',system-ui,sans-serif;
   --radius:5px;
+  --nav-h:54px;
 }
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:15px;line-height:1.6}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 12px)}
+body{font-family:var(--sans);background:var(--bg);color:var(--text);font-size:15px;line-height:1.6;overflow-x:hidden}
+a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 
 /* ── NAV ── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  height:54px;display:flex;align-items:center;justify-content:space-between;
+  height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;
   padding:0 4rem;
   border-bottom:1px solid var(--border);
   background:rgba(17,20,24,0.92);
   backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
 }
 .nav-name{font-family:var(--display);font-size:1.05rem;font-style:italic;color:var(--white);text-decoration:none;cursor:pointer}
 .nav-name:hover{color:var(--amber)}
@@ -48,6 +101,7 @@ nav{
   transition:color 0.12s,background 0.12s;
 }
 .nav-links a:hover,.nav-links a.active{color:var(--text);background:var(--bg3)}
+.nav-right{display:flex;align-items:center;gap:0.5rem}
 .nav-cv{
   display:flex;align-items:center;gap:0.4rem;
   font-size:0.72rem;font-weight:700;
@@ -58,12 +112,25 @@ nav{
 }
 .nav-cv:hover{opacity:0.85}
 .nav-cv svg{width:12px;height:12px}
+.nav-toggle{
+  display:none;
+  width:34px;height:34px;border-radius:var(--radius);
+  background:transparent;border:1px solid var(--border2);
+  color:var(--text);cursor:pointer;
+  align-items:center;justify-content:center;
+  transition:border-color 0.12s,color 0.12s;
+}
+.nav-toggle:hover{border-color:var(--amber-border);color:var(--amber)}
+.nav-toggle svg{width:16px;height:16px}
+.nav-toggle .icon-close{display:none}
+nav.open .nav-toggle .icon-open{display:none}
+nav.open .nav-toggle .icon-close{display:block}
 
 /* ── HERO ── */
 .hero{
   min-height:100vh;display:grid;
   grid-template-columns:1fr 1fr;
-  padding-top:54px;
+  padding-top:var(--nav-h);
 }
 .hero-left{
   padding:5.5rem 4rem 5rem;
@@ -94,8 +161,24 @@ h1 em{font-style:normal;display:block;color:var(--amber)}
 }
 .hero-lab{
   font-size:0.76rem;color:var(--faint);
-  letter-spacing:0.03em;margin-bottom:2rem;
+  letter-spacing:0.03em;margin-bottom:1.1rem;
 }
+.hero-avail{
+  display:inline-flex;align-self:flex-start;flex-wrap:wrap;gap:0.2rem 0.5rem;
+  font-size:0.7rem;font-weight:600;letter-spacing:0.04em;
+  color:var(--text);
+  padding:0.35rem 0.7rem;border-radius:var(--radius);
+  border:1px solid var(--amber-border);background:var(--amber-dim);
+  margin-bottom:0.9rem;
+}
+.hero-avail span+span::before{content:"·";color:var(--amber);margin-right:0.5rem}
+.hero-contact{
+  font-size:0.76rem;color:var(--faint);
+  letter-spacing:0.03em;margin-bottom:2rem;
+  overflow-wrap:anywhere;
+}
+.hero-contact a{color:var(--muted);text-decoration:none}
+.hero-contact a:hover{color:var(--amber)}
 .hero-divider{width:36px;height:1px;background:var(--amber);margin-bottom:2rem}
 .hero-cta-row{display:flex;gap:0.55rem;flex-wrap:wrap}
 .hcta{
@@ -115,7 +198,7 @@ h1 em{font-style:normal;display:block;color:var(--amber)}
 .hero-bio{
   font-family:var(--display);font-style:italic;
   font-size:1.2rem;font-weight:400;
-  color:rgba(240,244,248,0.62);line-height:1.78;
+  color:rgba(240,244,248,0.7);line-height:1.78;
   margin-bottom:1.8rem;
 }
 .hero-bio strong{font-style:normal;color:var(--white);font-weight:400}
@@ -148,7 +231,7 @@ h1 em{font-style:normal;display:block;color:var(--amber)}
 }
 .stat-label{font-size:0.62rem;font-weight:600;text-transform:uppercase;letter-spacing:0.1em;color:var(--faint)}
 
-/* ── NEWS ── */
+/* ── SECTIONS ── */
 .outer{max-width:1200px;margin:0 auto}
 .sec{padding:5rem 4rem;border-top:1px solid var(--border)}
 .sec-inner{max-width:920px}
@@ -162,6 +245,7 @@ h2{
   color:var(--white);margin-bottom:2.5rem;letter-spacing:-0.01em;
 }
 
+/* ── NEWS ── */
 .news-list{display:flex;flex-direction:column;gap:0}
 .news-item{
   display:grid;grid-template-columns:100px 1fr;gap:1.5rem;
@@ -176,13 +260,6 @@ h2{
 .news-text{font-size:0.85rem;color:var(--text);line-height:1.55}
 .news-text a{color:var(--amber);text-decoration:none}
 .news-text a:hover{text-decoration:underline}
-.news-badge{
-  display:inline-block;margin-left:0.4rem;
-  font-size:0.6rem;font-weight:700;text-transform:uppercase;
-  letter-spacing:0.07em;padding:0.12rem 0.4rem;border-radius:3px;
-  background:var(--amber-dim);color:var(--amber);
-  border:1px solid var(--amber-border);vertical-align:middle;
-}
 
 /* ── RESEARCH ── */
 .r-bands{display:flex;flex-direction:column}
@@ -211,7 +288,6 @@ h2{
 .pub{
   display:grid;grid-template-columns:80px 1fr;gap:1.5rem;
   padding:1.5rem 0;border-top:1px solid var(--border);
-  transition:background 0.12s;cursor:default;
 }
 .pub:last-child{border-bottom:1px solid var(--border)}
 .pub-year{
@@ -233,21 +309,18 @@ h2{
   display:inline-flex;align-items:center;gap:0.3rem;
   font-size:0.66rem;font-weight:700;text-transform:uppercase;
   letter-spacing:0.06em;padding:0.2rem 0.55rem;border-radius:var(--radius);
-  text-decoration:none;transition:background 0.1s;
+  text-decoration:none;transition:background 0.1s,border-color 0.1s,color 0.1s;
 }
 .pub-link svg{width:11px;height:11px}
 .doi{background:var(--amber-dim);color:var(--amber);border:1px solid var(--amber-border)}
 .doi:hover{background:rgba(245,158,11,0.14)}
-.pre{background:rgba(99,102,241,0.08);color:#818cf8;border:1px solid rgba(99,102,241,0.2)}
+.pre{background:rgba(99,102,241,0.08);color:#9ea3fb;border:1px solid rgba(99,102,241,0.25)}
 .pre:hover{background:rgba(99,102,241,0.14)}
-.badge-new{
-  display:inline-block;font-size:0.58rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:0.07em;
-  padding:0.1rem 0.38rem;border-radius:3px;
-  background:var(--amber-dim);color:var(--amber);
-  border:1px solid var(--amber-border);
-  margin-left:0.4rem;vertical-align:middle;
-}
+.code-link{background:var(--bg2);color:var(--text);border:1px solid var(--border2)}
+.code-link:hover{border-color:var(--amber-border);color:var(--amber)}
+.sec-note{margin-top:1.1rem;font-size:0.75rem;color:var(--faint)}
+.sec-note a{color:var(--amber);text-decoration:none}
+.sec-note a:hover{text-decoration:underline}
 
 /* ── TIMELINE ── */
 .tl{display:flex;flex-direction:column}
@@ -262,8 +335,9 @@ h2{
   display:inline-flex;align-items:center;gap:0.35rem;
   font-size:0.78rem;color:var(--amber);font-weight:500;margin-bottom:0.3rem;
 }
-.tli-org svg{width:12px;height:12px;opacity:0.7}
+.tli-org svg{width:12px;height:12px;opacity:0.7;flex-shrink:0}
 .tli-desc{font-size:0.78rem;color:var(--muted);line-height:1.6}
+.tli-desc em{font-style:italic;color:var(--text)}
 
 /* ── CODE ── */
 .code-grid{
@@ -273,24 +347,25 @@ h2{
 .cc{
   background:var(--bg);padding:1.4rem 1.5rem;
   text-decoration:none;color:inherit;display:block;
-  transition:background 0.15s;
 }
-.cc:hover{background:var(--bg2)}
-.cc-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:0.6rem}
+a.cc{transition:background 0.15s}
+a.cc:hover{background:var(--bg2)}
+.cc-header{display:flex;justify-content:space-between;align-items:center;gap:0.75rem;margin-bottom:0.6rem}
 .cc-name{
   display:flex;align-items:center;gap:0.4rem;
   font-size:0.88rem;font-weight:600;color:var(--white);
 }
-.cc-name svg{width:15px;height:15px;color:var(--amber);opacity:0.8}
-.cc-lang{font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--faint)}
+.cc-name svg{width:15px;height:15px;color:var(--amber);opacity:0.8;flex-shrink:0}
+.cc-lang{font-size:0.64rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--faint);white-space:nowrap}
 .cc p{font-size:0.78rem;color:var(--muted);line-height:1.55}
-.cc-pending{
-  display:inline-block;margin-top:0.6rem;
+.cc-status{
+  display:inline-block;margin-top:0.7rem;
   font-size:0.62rem;font-weight:700;text-transform:uppercase;
   letter-spacing:0.06em;padding:0.15rem 0.45rem;border-radius:3px;
-  background:rgba(255,255,255,0.04);color:var(--faint);
-  border:1px solid var(--border2);
 }
+.cc-public{background:var(--amber-dim);color:var(--amber);border:1px solid var(--amber-border)}
+.cc-quiet{background:rgba(255,255,255,0.03);color:var(--faint);border:1px solid var(--border2)}
+.cc-muted .cc-name svg{color:var(--faint)}
 
 /* ── SKILLS ── */
 .sk-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem}
@@ -311,23 +386,28 @@ h2{
 .sk-tag:hover{border-color:var(--amber-border);color:var(--amber)}
 
 /* ── CONTACT ── */
+.contact-intro{
+  font-family:var(--display);font-style:italic;font-size:1rem;
+  color:rgba(212,219,230,0.72);max-width:520px;line-height:1.8;margin-bottom:1.75rem;
+}
 .contact-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
   gap:1px;background:var(--border);border:1px solid var(--border);
 }
 .ccard{
   background:var(--bg);padding:1.3rem 1.5rem;
-  text-decoration:none;color:inherit;
-  transition:background 0.12s;display:block;
+  text-decoration:none;color:inherit;display:block;
 }
-.ccard:hover{background:var(--bg2)}
+a.ccard{transition:background 0.12s}
+a.ccard:hover{background:var(--bg2)}
 .ccard-label{
   display:flex;align-items:center;gap:0.35rem;
   font-size:0.62rem;font-weight:700;text-transform:uppercase;
   letter-spacing:0.12em;color:var(--faint);margin-bottom:0.35rem;
 }
 .ccard-label svg{width:12px;height:12px}
-.ccard-val{font-size:0.85rem;color:var(--amber);font-weight:500}
+.ccard-val{font-size:0.85rem;color:var(--amber);font-weight:500;overflow-wrap:anywhere}
+.ccard-val.plain{color:var(--text)}
 
 /* ── FOOTER ── */
 footer{
@@ -339,106 +419,151 @@ footer{
 }
 footer a{color:var(--faint);text-decoration:none;transition:color 0.12s}
 footer a:hover{color:var(--amber)}
-.footer-links{display:flex;gap:1rem}
+.footer-links{display:flex;gap:1rem;flex-wrap:wrap}
 
-/* ── RESPONSIVE ── */
-@media(max-width:960px){
+/* ── RESPONSIVE: navigation ── */
+@media(max-width:1100px){
   nav{padding:0 1.5rem}
-  .nav-links{display:none}
+  .nav-toggle{display:inline-flex}
+  .nav-links{
+    display:none;
+    position:absolute;top:var(--nav-h);left:0;right:0;
+    flex-direction:column;gap:0;
+    background:rgba(17,20,24,0.98);
+    border-bottom:1px solid var(--border);
+    padding:0.4rem 0;
+    max-height:calc(100vh - var(--nav-h));overflow-y:auto;
+  }
+  nav.open .nav-links{display:flex}
+  .nav-links a{
+    padding:0.8rem 1.5rem;border-radius:0;
+    font-size:0.76rem;border-top:1px solid var(--border);
+  }
+  .nav-links a:first-child{border-top:none}
+  .nav-links a:hover,.nav-links a.active{background:var(--bg3);color:var(--amber)}
+}
+
+/* ── RESPONSIVE: layout ── */
+@media(max-width:960px){
   .hero{grid-template-columns:1fr;min-height:auto}
   .hero-left{padding:4.5rem 1.75rem 3rem;border-right:none}
   .hero-right{padding:3rem 1.75rem 4rem;border-top:1px solid var(--border)}
   h1{font-size:3rem}
   .outer .sec{padding:4rem 1.75rem}
   .r-band{grid-template-columns:1fr;gap:0.75rem}
-  .pub{grid-template-columns:1fr}
-  .pub-year{font-size:0.9rem;font-style:normal}
-  .tli{grid-template-columns:1fr}
-  .stat-strip{flex-wrap:wrap}
+  .r-band-left{flex-direction:row;align-items:center}
+  .pub{grid-template-columns:1fr;gap:0.5rem}
+  .pub-year{font-size:0.9rem;font-style:normal;padding-top:0}
+  .tli{grid-template-columns:1fr;gap:0.35rem}
+  .news-item{grid-template-columns:1fr;gap:0.25rem}
   footer{padding:1.25rem 1.75rem}
+}
+@media(max-width:480px){
+  nav{padding:0 1rem}
+  .hero-left,.hero-right{padding-left:1rem;padding-right:1rem}
+  .outer .sec{padding:3.5rem 1rem}
+  footer{padding:1.25rem 1rem}
+  h1{font-size:2.6rem}
+  h2{font-size:1.9rem;margin-bottom:1.75rem}
+  .hero-bio{font-size:1.08rem}
+  .stat-cell{padding:0.8rem 0.7rem}
+  .cc-header{flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
 }
 </style>
 </head>
 <body>
 
-<nav>
+<nav id="site-nav" aria-label="Primary">
   <a href="#about" class="nav-name">Ramzan Basheer</a>
-  <div class="nav-links">
-    <a href="#news">News</a>
+  <div class="nav-links" id="nav-links">
     <a href="#research">Research</a>
-    <a href="#publications">Papers</a>
+    <a href="#publications">Publications</a>
     <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
     <a href="#code">Code</a>
+    <a href="#skills">Skills</a>
     <a href="#contact">Contact</a>
   </div>
-  <a href="CV_RMZ.pdf" class="nav-cv">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3"/></svg>
-    CV
-  </a>
+  <div class="nav-right">
+    <a href="Ramzan_Basheer_CV.pdf" class="nav-cv">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3"/></svg>
+      CV
+    </a>
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
+      <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
 </nav>
+
+<main>
 
 <!-- ── HERO ── -->
 <section class="hero" id="about">
   <div class="hero-left">
-    <div class="hero-sup"><span class="hero-sup-dot"></span> Machine Learning Researcher · Deep Learning, Graph Learning, Time-Series</div>
+    <div class="hero-sup"><span class="hero-sup-dot"></span> Machine Learning Researcher · Geometric &amp; Structured Deep Learning</div>
     <h1>Ramzan <em>Basheer</em></h1>
     <div class="hero-affil">Senior Research Fellow · IIST Thiruvananthapuram</div>
     <div class="hero-lab">Dept. of Avionics · Supervisor: Prof. Deepak Mishra</div>
+    <div class="hero-avail">
+      <span>PhD expected Dec 2026</span><span>Available Jan 2027</span><span>Open to relocation</span>
+    </div>
+    <div class="hero-contact"><a href="mailto:r4ramzan@gmail.com">r4ramzan@gmail.com</a> · Thiruvananthapuram, India</div>
     <div class="hero-divider"></div>
     <div class="hero-cta-row">
-      <a href="https://scholar.google.com/citations?user=qPyFnlAAAAAJ" target="_blank" class="hcta hcta-amber">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20"/></svg>
+      <a href="https://scholar.google.com/citations?hl=en&amp;user=qPyFnlAAAAAJ" target="_blank" rel="noopener" class="hcta hcta-amber">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20"/></svg>
         Scholar
       </a>
-      <a href="https://github.com/ramzan-basheer" target="_blank" class="hcta hcta-ghost">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+      <a href="https://github.com/ramzan-basheer" target="_blank" rel="noopener" class="hcta hcta-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
         GitHub
       </a>
-      <a href="https://orcid.org/0000-0001-5856-5141" target="_blank" class="hcta hcta-ghost">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12h6M12 9v6"/></svg>
+      <a href="https://orcid.org/0000-0001-5856-5141" target="_blank" rel="noopener" class="hcta hcta-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 12h6M12 9v6"/></svg>
         ORCID
       </a>
       <a href="mailto:r4ramzan@gmail.com" class="hcta hcta-ghost">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
         Email
-      </a>
-      <a href="photo_gallery.html" class="hcta hcta-ghost">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-        Gallery
       </a>
     </div>
   </div>
   <div class="hero-right">
     <p class="hero-bio">
-      My research is on detecting and predicting epileptic seizures from EEG. Most of it comes down to taking the structure of the data seriously: treating EEG channels as a <strong>graph</strong> rather than an unordered set of signals, and treating covariance-based features as points on a curved <strong>SPD manifold</strong> rather than flat Euclidean space. I work mainly with graph neural networks, Riemannian manifold methods, and <strong>state space models</strong> (S4/Mamba) built around that structure.
+      I work on geometric and structured representation learning for multivariate data, building known structure into models (relationships between variables as <strong>graphs</strong> or hypergraphs, temporal dynamics through <strong>state-space models</strong>, covariance features as <strong>SPD matrices</strong>) instead of leaving the network to rediscover it. My doctoral research uses multichannel EEG as the testbed, where spatial, higher-order, temporal and geometric structure all matter.
     </p>
     <div class="hero-tags">
       <span class="htag">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 12h10M17 5.5l-10 5M17 18.5l-10-5"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 12h10M17 5.5l-10 5M17 18.5l-10-5"/></svg>
         Graph Neural Networks
       </span>
       <span class="htag">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
-        SPD Manifolds
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="6" cy="7" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="12" cy="18" r="2"/><path d="M4 5h16l-8 15z" opacity="0.5"/></svg>
+        Hypergraph Learning
       </span>
       <span class="htag">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        State Space Models
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        State-Space Models
       </span>
       <span class="htag">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        SPD &amp; Manifold Learning
+      </span>
+      <span class="htag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v18M5 8l-2 4 2 4M19 8l2 4-2 4"/></svg>
         Equivariant Networks
       </span>
       <span class="htag">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-        EEG · Seizure Detection
-      </span>
-      <span class="htag">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm0 0v10m0 0l4.5-4.5"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 11-3-6.7M21 4v5h-5"/></svg>
         Continual Learning
       </span>
       <span class="htag">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17c3-8 6-8 9 0s6 8 9 0"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 17c3-8 6-8 9 0s6 8 9 0"/></svg>
         Kolmogorov-Arnold Networks
       </span>
     </div>
@@ -449,15 +574,11 @@ footer a:hover{color:var(--amber)}
       </div>
       <div class="stat-cell">
         <div class="stat-num">4</div>
-        <div class="stat-label">Journals</div>
+        <div class="stat-label">Journal Articles</div>
       </div>
       <div class="stat-cell">
-        <div class="stat-num">IIT</div>
-        <div class="stat-label">M.Tech</div>
-      </div>
-      <div class="stat-cell">
-        <div class="stat-num">NIT</div>
-        <div class="stat-label">B.Tech</div>
+        <div class="stat-num">5</div>
+        <div class="stat-label">First-Author Papers</div>
       </div>
     </div>
   </div>
@@ -469,27 +590,27 @@ footer a:hover{color:var(--amber)}
 <section class="sec" id="news">
   <div class="sec-inner">
     <div class="sec-label">Latest</div>
-    <h2>News & Updates</h2>
+    <h2>News &amp; Updates</h2>
     <div class="news-list">
       <div class="news-item">
         <div class="news-date">Jul 2026</div>
-        <div class="news-text">Paper accepted and published online (pre-proof) in <a href="https://doi.org/10.1016/j.patrec.2026.07.016" target="_blank">Pattern Recognition Letters</a> — Learning Feature-Wise Temporal-Spatial Gating with Kolmogorov-Arnold Networks for EEG Seizure Detection. <span class="news-badge">New</span></div>
+        <div class="news-text">Paper accepted in <a href="https://doi.org/10.1016/j.patrec.2026.07.016" target="_blank" rel="noopener">Pattern Recognition Letters</a> (Vol. 208) — feature-wise temporal-spatial gating with Kolmogorov–Arnold Networks.</div>
       </div>
       <div class="news-item">
         <div class="news-date">Jun 2026</div>
-        <div class="news-text">Paper accepted and published in <a href="https://doi.org/10.1109/ACCESS.2026.3702760" target="_blank">IEEE Access</a> — Neural State-Space Hypergraph Networks for EEG seizure detection.</div>
-      </div>
-      <div class="news-item">
-        <div class="news-date">Mar 2026</div>
-        <div class="news-text">Paper published in <a href="https://doi.org/10.1016/j.neucom.2025.131975" target="_blank">Neurocomputing</a> — Continual learning with equivariant GNNs for seizure detection.</div>
+        <div class="news-text">Paper published in <a href="https://doi.org/10.1109/ACCESS.2026.3702760" target="_blank" rel="noopener">IEEE Access</a> — Neural State-Space Hypergraph Networks.</div>
       </div>
       <div class="news-item">
         <div class="news-date">Feb 2026</div>
-        <div class="news-text">Survey published in <a href="https://doi.org/10.1007/s41060-025-00994-7" target="_blank">International Journal of Data Science & Analytics</a> — Symmetry group equivariant convolutions for representation learning.</div>
+        <div class="news-text">Survey published in the <a href="https://doi.org/10.1007/s41060-025-00994-7" target="_blank" rel="noopener">International Journal of Data Science &amp; Analytics</a> — symmetry group equivariant convolutions for representation learning.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">Nov 2025</div>
+        <div class="news-text">Paper published in <a href="https://doi.org/10.1016/j.neucom.2025.131975" target="_blank" rel="noopener">Neurocomputing</a> (Vol. 663) — continual learning with equivariant GNNs.</div>
       </div>
       <div class="news-item">
         <div class="news-date">Oct 2024</div>
-        <div class="news-text">Paper presented at <strong>IEEE MLSP 2024</strong> — Hypercube-S4GNN: multi-edge graph approach using state space models for EEG seizure detection.</div>
+        <div class="news-text">Paper presented at <strong>IEEE MLSP 2024</strong> — Hypercube-S4GNN, a multi-edge graph approach with S4 state-space layers.</div>
       </div>
       <div class="news-item">
         <div class="news-date">Aug 2024</div>
@@ -508,53 +629,53 @@ footer a:hover{color:var(--amber)}
 
       <div class="r-band">
         <div class="r-band-left">
+          <div class="r-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="r-band-tag">Structure</div>
+        </div>
+        <div>
+          <h3>Geometric &amp; Structured Learning</h3>
+          <p>Learning representations that keep known relational, symmetry and geometric structure instead of treating observations as independent, unordered features. Current work represents covariance features as symmetric positive definite (SPD) matrices under the Log-Euclidean metric, respecting their geometry rather than treating them as unconstrained Euclidean vectors, with persistent-homology-based regularisation.</p>
+        </div>
+      </div>
+
+      <div class="r-band">
+        <div class="r-band-left">
+          <div class="r-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 12h10M17 5.5l-10 5M17 18.5l-10-5"/></svg>
+          </div>
           <div class="r-band-tag">Graphs</div>
-          <div class="r-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 12h10M17 5.5l-10 5M17 18.5l-10-5"/></svg>
-          </div>
         </div>
         <div>
-          <h3>Equivariant Graph Neural Networks</h3>
-          <p>Multi-edge and hypergraph architectures with Z₂ hemispheric symmetry constraints for anatomically consistent EEG modelling. Group-equivariant convolutions that respect the bilateral structure of the brain and generalise across patients without retraining.</p>
+          <h3>Graph &amp; Hypergraph Learning</h3>
+          <p>Graph and hypergraph neural networks for pairwise, multi-relational and higher-order dependencies in multivariate data, from multi-edge graphs to hypergraphs with distributional and geometric inductive biases. Separate work combines equivariant GNNs that encode bilateral (Z₂) electrode symmetry with continual learning for patient-adaptive detection.</p>
         </div>
       </div>
 
       <div class="r-band">
         <div class="r-band-left">
-          <div class="r-band-tag">Geometry</div>
           <div class="r-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           </div>
-        </div>
-        <div>
-          <h3>Riemannian & Manifold Methods</h3>
-          <p>SPD matrix spaces with Log-Euclidean metrics for covariance-based EEG feature extraction. Fréchet mean aggregation, geodesic operations, and SPD manifold closure properties. Extends standard Euclidean deep learning to non-flat curved feature spaces.</p>
-        </div>
-      </div>
-
-      <div class="r-band">
-        <div class="r-band-left">
           <div class="r-band-tag">Sequences</div>
-          <div class="r-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-          </div>
         </div>
         <div>
-          <h3>State Space Models</h3>
-          <p>S4 and Mamba selective state space models for long-range EEG sequences of 12,000 steps at 200 Hz. Linear-time complexity with global receptive fields. Integrated into multi-edge graph pipelines via the Hypercube-S4GNN architecture for joint temporal and spatial modelling.</p>
+          <h3>State-Space Models</h3>
+          <p>S4 and Mamba state-space models for long-range dependencies in multivariate sequences, integrated with graph and hypergraph representations for joint spatial and temporal modelling. Related work uses Kolmogorov–Arnold Networks to learn feature-wise temporal–spatial gating before classification.</p>
         </div>
       </div>
 
       <div class="r-band">
         <div class="r-band-left">
-          <div class="r-band-tag">EEG · Clinical</div>
           <div class="r-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
           </div>
+          <div class="r-band-tag">Application</div>
         </div>
         <div>
-          <h3>Epileptic Seizure Detection & Prediction</h3>
-          <p>End-to-end graph-based multivariate EEG pipelines for epileptic event detection and anticipation. Validated on TUSZ v1.5.2 (detection) and CHB-MIT / Siena Scalp EEG (prediction) with leave-one-seizure-out and cross-session protocols. Longer term, I'm interested in whether these approaches could run close to real time and adapt to a new patient without extensive retraining.</p>
+          <h3>Biomedical Time Series</h3>
+          <p>Multichannel EEG is the main application domain: seizure detection and seizure prediction, using graph, temporal and geometric representations to model relationships within the signals. Longer term, I am interested in models that can run close to real time and adapt to a new patient with limited retraining.</p>
         </div>
       </div>
 
@@ -572,12 +693,12 @@ footer a:hover{color:var(--amber)}
       <div class="pub">
         <div class="pub-year">2026</div>
         <div>
-          <div class="pub-venue">Pattern Recognition Letters · Available Online (Pre-proof)</div>
-          <div class="pub-title">Learning Feature-Wise Temporal-Spatial Gating with Kolmogorov-Arnold Networks for EEG Seizure Detection <span class="badge-new">New</span></div>
+          <div class="pub-venue">Pattern Recognition Letters · Vol. 208, pp. 1–6</div>
+          <div class="pub-title">Learning Feature-Wise Temporal-Spatial Gating with Kolmogorov-Arnold Networks for EEG Seizure Detection</div>
           <div class="pub-authors"><strong>Basheer, R.</strong> &amp; Mishra, D.</div>
           <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.patrec.2026.07.016" target="_blank" class="pub-link doi">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            <a href="https://doi.org/10.1016/j.patrec.2026.07.016" target="_blank" rel="noopener" class="pub-link doi">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
               DOI
             </a>
           </div>
@@ -587,12 +708,12 @@ footer a:hover{color:var(--amber)}
       <div class="pub">
         <div class="pub-year">2026</div>
         <div>
-          <div class="pub-venue">IEEE Access</div>
+          <div class="pub-venue">IEEE Access · Vol. 14, pp. 95391–95402</div>
           <div class="pub-title">Neural State-Space Hypergraph Networks: EEG Seizure Detection via Distributional and Geometric Inductive Biases</div>
           <div class="pub-authors"><strong>Basheer, R.</strong> &amp; Mishra, D.</div>
           <div class="pub-links">
-            <a href="https://doi.org/10.1109/ACCESS.2026.3702760" target="_blank" class="pub-link doi">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            <a href="https://doi.org/10.1109/ACCESS.2026.3702760" target="_blank" rel="noopener" class="pub-link doi">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
               DOI
             </a>
           </div>
@@ -601,33 +722,33 @@ footer a:hover{color:var(--amber)}
 
       <div class="pub">
         <div class="pub-year">2026</div>
+        <div>
+          <div class="pub-venue">Int. Journal of Data Science &amp; Analytics · 22(1), 2</div>
+          <div class="pub-title">Symmetry Group Equivariant Convolutions for Representation Learning: A Survey</div>
+          <div class="pub-authors"><strong>Basheer, R.</strong> &amp; Mishra, D.</div>
+          <div class="pub-links">
+            <a href="https://doi.org/10.1007/s41060-025-00994-7" target="_blank" rel="noopener" class="pub-link doi">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              DOI
+            </a>
+            <a href="https://arxiv.org/abs/2409.07327" target="_blank" rel="noopener" class="pub-link pre">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              Preprint
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pub">
+        <div class="pub-year">2025</div>
         <div>
           <div class="pub-venue">Neurocomputing · Vol. 663, 131975</div>
           <div class="pub-title">Harnessing Continual Learning and Equivariant GNNs for Seizure Detection in EEG Time Series</div>
           <div class="pub-authors"><strong>Basheer, R.</strong> &amp; Mishra, D.</div>
           <div class="pub-links">
-            <a href="https://doi.org/10.1016/j.neucom.2025.131975" target="_blank" class="pub-link doi">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            <a href="https://doi.org/10.1016/j.neucom.2025.131975" target="_blank" rel="noopener" class="pub-link doi">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
               DOI
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="pub">
-        <div class="pub-year">2026</div>
-        <div>
-          <div class="pub-venue">Int. Journal of Data Science & Analytics · 22(1), 2</div>
-          <div class="pub-title">Symmetry Group Equivariant Convolutions for Representation Learning: A Survey</div>
-          <div class="pub-authors"><strong>Basheer, R.</strong> &amp; Mishra, D.</div>
-          <div class="pub-links">
-            <a href="https://doi.org/10.1007/s41060-025-00994-7" target="_blank" class="pub-link doi">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              DOI
-            </a>
-            <a href="https://arxiv.org/abs/2409.07327" target="_blank" class="pub-link pre">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              Preprint
             </a>
           </div>
         </div>
@@ -640,9 +761,13 @@ footer a:hover{color:var(--amber)}
           <div class="pub-title">Hypercube-S4GNN: A Multi-Edge Graph Approach Using State Space Models on Multivariate EEG for Seizure Detection</div>
           <div class="pub-authors"><strong>Basheer, R.</strong>, Daraie, A.H. &amp; Mishra, D.</div>
           <div class="pub-links">
-            <a href="https://doi.org/10.1109/MLSP58920.2024.10734832" target="_blank" class="pub-link doi">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            <a href="https://doi.org/10.1109/MLSP58920.2024.10734832" target="_blank" rel="noopener" class="pub-link doi">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
               DOI
+            </a>
+            <a href="https://github.com/ramzan-basheer/Hypercube-S4GNN" target="_blank" rel="noopener" class="pub-link code-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+              Code
             </a>
           </div>
         </div>
@@ -651,12 +776,12 @@ footer a:hover{color:var(--amber)}
       <div class="pub">
         <div class="pub-year">2016</div>
         <div>
-          <div class="pub-venue">IEEE ICIS 2016 · Conference</div>
+          <div class="pub-venue">Int. Conference on Information Science (ICIS) 2016 · pp. 149–155</div>
           <div class="pub-title">RLS Classification of Hyperspectral Image after Fusion and Recursive Filtering</div>
           <div class="pub-authors">Akhila C.P. &amp; <strong>Basheer, R.</strong></div>
           <div class="pub-links">
-            <a href="https://doi.org/10.1109/INFOSCI.2016.7845317" target="_blank" class="pub-link doi">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            <a href="https://doi.org/10.1109/INFOSCI.2016.7845317" target="_blank" rel="noopener" class="pub-link doi">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
               DOI
             </a>
           </div>
@@ -664,10 +789,10 @@ footer a:hover{color:var(--amber)}
       </div>
 
     </div>
-    <p style="margin-top:1.1rem;font-size:0.75rem;color:var(--faint)">
-      →&nbsp;<a href="https://scholar.google.com/citations?user=qPyFnlAAAAAJ" target="_blank" style="color:var(--amber);text-decoration:none">Full list on Google Scholar</a>
+    <p class="sec-note">
+      →&nbsp;<a href="https://scholar.google.com/citations?hl=en&amp;user=qPyFnlAAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
       &nbsp;·&nbsp;
-      <a href="https://orcid.org/0000-0001-5856-5141" target="_blank" style="color:var(--amber);text-decoration:none">ORCID Profile</a>
+      <a href="https://orcid.org/0000-0001-5856-5141" target="_blank" rel="noopener">ORCID</a>
     </p>
   </div>
 </section>
@@ -683,10 +808,10 @@ footer a:hover{color:var(--amber)}
         <div>
           <div class="tli-role">Senior Research Fellow</div>
           <div class="tli-org">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7H3l2-4h14l2 4"/></svg>
-            IIST Thiruvananthapuram
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7H3l2-4h14l2 4"/></svg>
+            CVVR Lab, IIST Thiruvananthapuram
           </div>
-          <div class="tli-desc">Leading research on geometric GNNs and state space models for EEG-based seizure detection and prediction. Designing novel architectures on SPD manifolds and evaluating on TUSZ v1.5.2 and CHB-MIT corpora.</div>
+          <div class="tli-desc">Doctoral research on geometric graph neural networks and state-space models for seizure detection and prediction. Current work uses Log-Euclidean SPD graph representations with persistent-homology-based regularisation for seizure prediction.</div>
         </div>
       </div>
       <div class="tli">
@@ -694,42 +819,61 @@ footer a:hover{color:var(--amber)}
         <div>
           <div class="tli-role">Junior Research Fellow</div>
           <div class="tli-org">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7H3l2-4h14l2 4"/></svg>
-            IIST Thiruvananthapuram
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7H3l2-4h14l2 4"/></svg>
+            CVVR Lab, IIST Thiruvananthapuram
           </div>
-          <div class="tli-desc">Graph-based multivariate EEG classification and continual learning methods for seizure detection.</div>
+          <div class="tli-desc">Graph-based modelling of multichannel EEG for seizure detection, including multi-edge graphs with S4 layers and continual learning with equivariant GNNs.</div>
         </div>
       </div>
       <div class="tli">
-        <div class="tli-date">Aug 2018 – Present</div>
+        <div class="tli-date">Aug 2018 – Present<br>(on sabbatical since 2022)</div>
         <div>
           <div class="tli-role">Assistant Professor</div>
           <div class="tli-org">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7H3l2-4h14l2 4"/></svg>
-            Presidency University
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7H3l2-4h14l2 4"/></svg>
+            Presidency University, Bengaluru
           </div>
-          <div class="tli-desc">On sabbatical since 2022 to pursue full-time doctoral research at IIST. Previously taught signal processing and electronics engineering courses.</div>
+          <div class="tli-desc">Undergraduate courses in electronics engineering; designed and supervised laboratories in Analog Electronics, Analog Communication, Digital Design and Electrical Measurements; mentored student projects. On sabbatical for full-time doctoral research.</div>
         </div>
       </div>
       <div class="tli">
         <div class="tli-date">Aug 2017 – Jul 2018</div>
         <div>
           <div class="tli-role">Assistant Professor</div>
-          <div class="tli-org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7H3l2-4h14l2 4"/></svg>Acharya Institute of Technology</div>
+          <div class="tli-org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7H3l2-4h14l2 4"/></svg>Acharya Institute of Technology, Bengaluru</div>
+          <div class="tli-desc">Taught Engineering Electromagnetics, Basic Electronics, and Antennas and Propagation; coordinated final-year seminars and laboratory sessions.</div>
+        </div>
+      </div>
+      <div class="tli">
+        <div class="tli-date">Aug 2015 – Jun 2016</div>
+        <div>
+          <div class="tli-role">Lecturer</div>
+          <div class="tli-org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7H3l2-4h14l2 4"/></svg>MES College of Engineering, Kuttippuram</div>
+          <div class="tli-desc">Taught undergraduate and postgraduate courses in electronics and communication engineering; supervised postgraduate projects on hyperspectral image classification and cloud removal from satellite imagery.</div>
+        </div>
+      </div>
+      <div class="tli">
+        <div class="tli-date">Jun 2013 – May 2015</div>
+        <div>
+          <div class="tli-role">Teaching Assistant</div>
+          <div class="tli-org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21h18M3 7v1a3 3 0 006 0V7m0 1a3 3 0 006 0V7m0 1a3 3 0 006 0V7H3l2-4h14l2 4"/></svg>Video Processing Lab, IIT Bombay</div>
+          <div class="tli-desc">Assisted three offerings of EE340 (Communications Lab). Contributed to projects on automated blood cell counting from microscopy images and wavelet-based beat detection in music, alongside M.Tech thesis work on activity recognition.</div>
         </div>
       </div>
       <div class="tli">
         <div class="tli-date">Jan 2011 – May 2012</div>
         <div>
           <div class="tli-role">Associate Applications Developer</div>
-          <div class="tli-org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Oracle</div>
+          <div class="tli-org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Oracle Financial Services Software, Bengaluru</div>
+          <div class="tli-desc">Developed and maintained components of the Oracle FLEXCUBE core banking platform in Java, PL/SQL and Oracle Database; built enterprise Java (EJB) client applications.</div>
         </div>
       </div>
       <div class="tli">
         <div class="tli-date">Jun 2010 – Jan 2011</div>
         <div>
           <div class="tli-role">Systems Engineer</div>
-          <div class="tli-org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Infosys</div>
+          <div class="tli-org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>Infosys Technologies, Mysore</div>
+          <div class="tli-desc">Professional training in C, C++, Java, PL/SQL, UNIX and COBOL, followed by development of business application prototypes.</div>
         </div>
       </div>
     </div>
@@ -743,25 +887,26 @@ footer a:hover{color:var(--amber)}
     <h2>Education</h2>
     <div class="tl">
       <div class="tli">
-        <div class="tli-date">Aug 2022 – Present</div>
+        <div class="tli-date">Aug 2022 – Dec 2026<br>(expected)</div>
         <div>
-          <div class="tli-role">PhD — Deep Learning</div>
-          <div class="tli-org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20"/></svg>IIST Thiruvananthapuram</div>
-          <div class="tli-desc">Dept. of Avionics. Supervisor: Prof. Deepak Mishra. Research on geometric GNNs and SSMs for EEG seizure detection and prediction.</div>
+          <div class="tli-role">PhD — Avionics</div>
+          <div class="tli-org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20"/></svg>Indian Institute of Space Science and Technology (IIST)</div>
+          <div class="tli-desc">Thesis: <em>Geometric Deep Learning for Representation Learning from Multichannel EEG in Epilepsy</em>. Supervisor: Prof. Deepak Mishra.</div>
         </div>
       </div>
       <div class="tli">
         <div class="tli-date">2013 – 2015</div>
         <div>
-          <div class="tli-role">M.Tech — Communications Engineering</div>
-          <div class="tli-org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20"/></svg>IIT Bombay</div>
+          <div class="tli-role">M.Tech — Communication Engineering</div>
+          <div class="tli-org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20"/></svg>Indian Institute of Technology Bombay</div>
+          <div class="tli-desc">Thesis: <em>Human Activity Recognition in Far Field of View</em> — person-independent HOG and HOOF descriptors, extended to crowded scenes.</div>
         </div>
       </div>
       <div class="tli">
         <div class="tli-date">2006 – 2010</div>
         <div>
-          <div class="tli-role">B.Tech — Electronics & Communications Engineering</div>
-          <div class="tli-org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20"/></svg>NIT Calicut</div>
+          <div class="tli-role">B.Tech — Electronics and Communication Engineering</div>
+          <div class="tli-org"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0112 20"/></svg>National Institute of Technology Calicut</div>
         </div>
       </div>
     </div>
@@ -774,41 +919,42 @@ footer a:hover{color:var(--amber)}
     <div class="sec-label">Open Source</div>
     <h2>Code</h2>
     <div class="code-grid">
-      <a href="https://github.com/ramzan-basheer/Hypercube-S4GNN" target="_blank" class="cc">
+      <a href="https://github.com/ramzan-basheer/Hypercube-S4GNN" target="_blank" rel="noopener" class="cc">
         <div class="cc-header">
           <span class="cc-name">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
             Hypercube-S4GNN
           </span>
-          <span class="cc-lang">Python · PyTorch</span>
+          <span class="cc-lang">PyTorch · PyG</span>
         </div>
-        <p>Multi-edge GNN with S4/Mamba SSMs for multivariate EEG seizure detection. Evaluated on TUSZ v1.5.2. Code for the IEEE MLSP 2024 paper.</p>
+        <p>Multi-edge graph neural network with S4 state-space layers for joint spatial and temporal modelling of multichannel EEG. Evaluated on CHB-MIT and the TUH EEG Seizure Corpus. Code for the IEEE MLSP 2024 paper.</p>
+        <span class="cc-status cc-public">Public repository</span>
       </a>
-      <a href="https://github.com/ramzan-basheer" target="_blank" class="cc">
+      <div class="cc cc-muted">
         <div class="cc-header">
           <span class="cc-name">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
-            Neural SSM Hypergraph
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="6" cy="7" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="12" cy="18" r="2"/><path d="M4 5h16l-8 15z" opacity="0.5"/></svg>
+            Neural State-Space Hypergraph Networks
           </span>
-          <span class="cc-lang">Python · PyTorch</span>
+          <span class="cc-lang">PyTorch</span>
         </div>
-        <p>Distributional and geometric inductive biases via hypergraph topology and SSM temporal modelling. Code for the IEEE Access 2026 paper.</p>
-        <span class="cc-pending">Repo release pending</span>
-      </a>
-      <a href="https://github.com/ramzan-basheer" target="_blank" class="cc">
+        <p>Hypergraph neural network with state-space temporal modelling and distributional and geometric inductive biases, evaluated on TUSZ v1.5.2. Accompanies the IEEE Access 2026 paper.</p>
+        <span class="cc-status cc-quiet">Implementation forthcoming</span>
+      </div>
+      <div class="cc cc-muted">
         <div class="cc-header">
           <span class="cc-name">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
             GTGN
           </span>
-          <span class="cc-lang">Python · PyTorch</span>
+          <span class="cc-lang">PyTorch</span>
         </div>
-        <p>Log-Euclidean SPD manifold GNN for seizure prediction on CHB-MIT and Siena Scalp EEG datasets. Manuscript in preparation for IEEE TNSRE.</p>
-        <span class="cc-pending">Repo release pending</span>
-      </a>
+        <p>Manuscript in preparation on geometric temporal graph networks with Log-Euclidean SPD representations and persistent-homology-based regularisation for seizure prediction, evaluated on CHB-MIT and Siena Scalp EEG.</p>
+        <span class="cc-status cc-quiet">In preparation</span>
+      </div>
     </div>
-    <p style="margin-top:1rem;font-size:0.74rem;color:var(--faint)">
-      → <a href="https://github.com/ramzan-basheer" target="_blank" style="color:var(--amber);text-decoration:none">github.com/ramzan-basheer</a> — repositories are added as each project is finalised for release
+    <p class="sec-note">
+      → <a href="https://github.com/ramzan-basheer" target="_blank" rel="noopener">github.com/ramzan-basheer</a> — repositories are added as each project is released
     </p>
   </div>
 </section>
@@ -821,53 +967,54 @@ footer a:hover{color:var(--amber)}
     <div class="sk-grid">
       <div class="sk-group">
         <h3>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
-          Research Methods
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          Machine Learning
         </h3>
-        <span class="sk-tag">Graph Neural Networks</span>
-        <span class="sk-tag">State Space Models</span>
-        <span class="sk-tag">Riemannian Geometry</span>
+        <span class="sk-tag">Representation Learning</span>
+        <span class="sk-tag">Geometric Deep Learning</span>
+        <span class="sk-tag">Graph Machine Learning</span>
+        <span class="sk-tag">Riemannian / Manifold Learning</span>
         <span class="sk-tag">Continual Learning</span>
-        <span class="sk-tag">Equivariant Networks</span>
-        <span class="sk-tag">Hypergraph Learning</span>
-        <span class="sk-tag">Biomedical Signal Processing</span>
-        <span class="sk-tag">Kolmogorov-Arnold Networks</span>
       </div>
       <div class="sk-group">
         <h3>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-          Programming
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 12h10M17 5.5l-10 5M17 18.5l-10-5"/></svg>
+          Architectures
+        </h3>
+        <span class="sk-tag">Graph Neural Networks</span>
+        <span class="sk-tag">Hypergraph Networks</span>
+        <span class="sk-tag">S4 / Mamba</span>
+        <span class="sk-tag">Equivariant Networks</span>
+        <span class="sk-tag">Kolmogorov–Arnold Networks</span>
+      </div>
+      <div class="sk-group">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          Programming &amp; Frameworks
         </h3>
         <span class="sk-tag">Python</span>
         <span class="sk-tag">PyTorch</span>
         <span class="sk-tag">PyTorch Geometric</span>
-        <span class="sk-tag">TensorFlow / Keras</span>
-        <span class="sk-tag">NumPy / Pandas</span>
-        <span class="sk-tag">MATLAB</span>
+        <span class="sk-tag">DGL</span>
+        <span class="sk-tag">TensorFlow</span>
+        <span class="sk-tag">scikit-learn</span>
+        <span class="sk-tag">Hugging Face</span>
         <span class="sk-tag">C / C++</span>
         <span class="sk-tag">Java</span>
+        <span class="sk-tag">MATLAB</span>
       </div>
       <div class="sk-group">
         <h3>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-          Tools
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          Research &amp; Engineering
         </h3>
-        <span class="sk-tag">Jupyter</span>
-        <span class="sk-tag">VS Code</span>
-        <span class="sk-tag">TensorBoard</span>
-        <span class="sk-tag">Git / GitHub</span>
-        <span class="sk-tag">LaTeX</span>
-        <span class="sk-tag">NetworkX</span>
-        <span class="sk-tag">Matplotlib</span>
-      </div>
-      <div class="sk-group">
-        <h3>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-          Benchmarks
-        </h3>
-        <span class="sk-tag">TUSZ v1.5.2</span>
-        <span class="sk-tag">CHB-MIT Scalp EEG</span>
-        <span class="sk-tag">Siena Scalp EEG</span>
+        <span class="sk-tag">Git</span>
+        <span class="sk-tag">Docker</span>
+        <span class="sk-tag">Linux</span>
+        <span class="sk-tag">Weights &amp; Biases</span>
+        <span class="sk-tag">NumPy / SciPy / pandas</span>
+        <span class="sk-tag">MNE-Python</span>
+        <span class="sk-tag">EEGLAB</span>
       </div>
     </div>
   </div>
@@ -878,62 +1025,105 @@ footer a:hover{color:var(--amber)}
   <div class="sec-inner">
     <div class="sec-label">Get in Touch</div>
     <h2>Contact</h2>
-    <p style="font-family:var(--display);font-style:italic;font-size:1rem;color:rgba(212,219,230,0.58);max-width:480px;line-height:1.8;margin-bottom:1.75rem">
-      Open to research-scientist and postdoctoral positions, and to collaborations on geometric deep learning for biomedical time series.
+    <p class="contact-intro">
+      Open to research and R&amp;D positions in machine learning and deep learning, postdoctoral positions, and collaborations on structured and geometric representation learning.
     </p>
     <div class="contact-grid">
       <a href="mailto:r4ramzan@gmail.com" class="ccard">
-        <div class="ccard-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> Email</div>
+        <div class="ccard-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg> Email</div>
         <div class="ccard-val">r4ramzan@gmail.com</div>
       </a>
-      <a href="https://www.linkedin.com/in/r4ramzan-basheer" target="_blank" class="ccard">
-        <div class="ccard-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</div>
+      <a href="tel:+919769171579" class="ccard">
+        <div class="ccard-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg> Phone</div>
+        <div class="ccard-val">+91-9769171579</div>
+      </a>
+      <a href="https://www.linkedin.com/in/r4ramzan-basheer" target="_blank" rel="noopener" class="ccard">
+        <div class="ccard-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg> LinkedIn</div>
         <div class="ccard-val">r4ramzan-basheer</div>
       </a>
-      <a href="https://scholar.google.com/citations?user=qPyFnlAAAAAJ" target="_blank" class="ccard">
-        <div class="ccard-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z"/></svg> Google Scholar</div>
+      <a href="https://scholar.google.com/citations?hl=en&amp;user=qPyFnlAAAAAJ" target="_blank" rel="noopener" class="ccard">
+        <div class="ccard-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 14l9-5-9-5-9 5 9 5z"/></svg> Google Scholar</div>
         <div class="ccard-val">View all papers ↗</div>
       </a>
-      <a href="https://orcid.org/0000-0001-5856-5141" target="_blank" class="ccard">
-        <div class="ccard-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12h6M12 9v6"/></svg> ORCID</div>
+      <a href="https://orcid.org/0000-0001-5856-5141" target="_blank" rel="noopener" class="ccard">
+        <div class="ccard-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9 12h6M12 9v6"/></svg> ORCID</div>
         <div class="ccard-val">0000-0001-5856-5141</div>
       </a>
-      <a href="https://github.com/ramzan-basheer" target="_blank" class="ccard">
-        <div class="ccard-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg> GitHub</div>
+      <a href="https://github.com/ramzan-basheer" target="_blank" rel="noopener" class="ccard">
+        <div class="ccard-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg> GitHub</div>
         <div class="ccard-val">ramzan-basheer</div>
       </a>
-      <a href="https://x.com/r4ramzan" target="_blank" class="ccard">
-        <div class="ccard-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l16 16M4 20L20 4"/></svg> X / Twitter</div>
-        <div class="ccard-val">@r4ramzan</div>
-      </a>
+      <div class="ccard">
+        <div class="ccard-label"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> Location</div>
+        <div class="ccard-val plain">Thiruvananthapuram, India</div>
+      </div>
     </div>
   </div>
 </section>
 
 </div><!-- /outer -->
 
+</main>
+
 <footer>
   <span>© 2026 Ramzan Basheer · IIST Thiruvananthapuram · Dept. of Avionics</span>
   <div class="footer-links">
+    <a href="Ramzan_Basheer_CV.pdf">CV</a>
     <a href="photo_gallery.html">Gallery</a>
     <a href="mailto:r4ramzan@gmail.com">r4ramzan@gmail.com</a>
   </div>
 </footer>
 
 <script>
-const navLinks = document.querySelectorAll('.nav-links a');
-const sections = document.querySelectorAll('section[id]');
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      navLinks.forEach(a => {
-        const active = a.getAttribute('href') === '#' + e.target.id;
-        a.classList.toggle('active', active);
-      });
+(function () {
+  const nav = document.getElementById('site-nav');
+  const toggle = document.getElementById('nav-toggle');
+  const linksBox = document.getElementById('nav-links');
+  const navLinks = linksBox.querySelectorAll('a');
+
+  function setOpen(open) {
+    nav.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+  }
+
+  toggle.addEventListener('click', function () {
+    setOpen(!nav.classList.contains('open'));
+  });
+
+  navLinks.forEach(function (a) {
+    a.addEventListener('click', function () { setOpen(false); });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav.classList.contains('open')) {
+      setOpen(false);
+      toggle.focus();
     }
   });
-}, { rootMargin: '-30% 0px -60% 0px' });
-sections.forEach(s => obs.observe(s));
+
+  document.addEventListener('click', function (e) {
+    if (nav.classList.contains('open') && !nav.contains(e.target)) setOpen(false);
+  });
+
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 1100 && nav.classList.contains('open')) setOpen(false);
+  });
+
+  const sections = document.querySelectorAll('section[id]');
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          navLinks.forEach(function (a) {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + e.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    sections.forEach(function (s) { obs.observe(s); });
+  }
+})();
 </script>
 </body>
 </html>
